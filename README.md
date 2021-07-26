@@ -18,7 +18,7 @@
   <h3 align="center">Uhppote PHP</h3>
 
   <p align="center">
-    An awesome README template to jumpstart your projects!
+    Uhppote PHP is hopefully to be the future of a full ACL website, with Web UI access to all the stuff that you may want to do with your ACL controller
     <br />
     <a href="https://github.com/realashleybailey/Uhppote-PHP/Documentation"><strong>Explore the docs »</strong></a>
     <br />
