@@ -98,6 +98,9 @@ To get a local copy up and running follow these simple steps.
    ```
 2. Install Composer packages
    ```sh
+   cd uhppote-php/public_html/resources/
+   ```
+   ```sh
    composer install
    ```
 
