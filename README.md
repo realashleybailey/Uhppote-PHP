@@ -185,12 +185,12 @@ Project Link: [https://github.com/your_username/repo_name](https://github.com/yo
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [contributors-shield]: https://img.shields.io/github/contributors/realashleybailey/Uhppote-PHP.svg?style=for-the-badge
 [contributors-url]: https://github.com/realashleybailey/Uhppote-PHP/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=for-the-badge
+[forks-shield]: https://img.shields.io/github/forks/realashleybailey/Uhppote-PHP.svg?style=for-the-badge
 [forks-url]: https://github.com/realashleybailey/Uhppote-PHP/network/members
-[stars-shield]: https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=for-the-badge
+[stars-shield]: https://img.shields.io/github/stars/realashleybailey/Uhppote-PHP.svg?style=for-the-badge
 [stars-url]: https://github.com/realashleybailey/Uhppote-PHP/stargazers
-[issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=for-the-badge
+[issues-shield]: https://img.shields.io/github/issues/realashleybailey/Uhppote-PHP.svg?style=for-the-badge
 [issues-url]: https://github.com/realashleybailey/Uhppote-PHP/issues
-[license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
+[license-shield]: https://img.shields.io/github/license/realashleybailey/Uhppote-PHP.svg?style=for-the-badge
 [license-url]: https://github.com/realashleybailey/Uhppote-PHP/blob/master/LICENSE.txt
 [product-screenshot]: images/screenshot.png
