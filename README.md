@@ -90,33 +90,21 @@ This section should list any major frameworks that you built your project using.
 
 To get a local copy up and running follow these simple steps.
 
-### Prerequisites
-
-This is an example of how to list things you need to use the software and how to install them.
-* composer
-  ```sh
-  composer install
-  ```
-
 ### Installation
 
 1. Get a free API Key at [https://example.com](https://example.com)
 2. Clone the repo
    ```sh
-   git clone https://github.com/your_username_/Project-Name.git
+   git clone https://github.com/realashleybailey/Uhppote-PHP.git
    ```
-3. Install NPM packages
+3. Install Composer packages
    ```sh
-   npm install
-   ```
-4. Enter your API in `config.js`
-   ```JS
-   const API_KEY = 'ENTER YOUR API';
+   composer install
    ```
 
 
 
-<!-- USAGE EXAMPLES -->
+<!-- USAGE EXAMPLES
 ## Usage
 
 Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
@@ -126,11 +114,11 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 
 
 <!-- ROADMAP -->
-## Roadmap
+<!-- ## Roadmap
 
 See the [open issues](https://github.com/othneildrew/Best-README-Template/issues) for a list of proposed features (and known issues).
 
-
+ -->
 
 <!-- CONTRIBUTING -->
 ## Contributing
@@ -148,16 +136,16 @@ Contributions are what make the open source community such an amazing place to b
 <!-- LICENSE -->
 ## License
 
-Distributed under the MIT License. See `LICENSE` for more information.
+Distributed under the GNU License. See `LICENSE` for more information.
 
 
 
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@your_twitter](https://twitter.com/your_username) - email@example.com
-
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
+Ashley Bailey - [admin@ashleybailey.me](mailto:admin@ashleybailey.me)
+<!-- 
+Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name) -->
 
 
 
