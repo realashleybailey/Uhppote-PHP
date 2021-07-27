@@ -12,7 +12,8 @@
             "src/"
         ],
         "files": [
-            "library/templateFunctions.php"
+            "library/templateFunctions.php",
+            "library/viewFunctions.php"
         ]
     }
 }

@@ -1,4 +1,5 @@
 <?php
+require_once('vendor/autoload.php');
 
 $config = array(
     "db" => array(
@@ -29,8 +30,10 @@ defined("LIBRARY_PATH")
 defined("TEMPLATES_PATH")
     or define("TEMPLATES_PATH", realpath(dirname(__FILE__) . '/templates'));
 
+defined("VIEWS_PATH")
+    or define("VIEWS_PATH", realpath(dirname(__FILE__) . '/views'));
 
 
 /* Error reporting. */
 ini_set("error_reporting", "true");
-error_reporting(E_ALL);
+error_reporting();
