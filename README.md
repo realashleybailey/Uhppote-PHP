@@ -180,5 +180,5 @@ Project Link: [https://github.com/your_username/repo_name](https://github.com/yo
 [issues-shield]: https://img.shields.io/github/issues/realashleybailey/Uhppote-PHP.svg?style=for-the-badge
 [issues-url]: https://github.com/realashleybailey/Uhppote-PHP/issues
 [license-shield]: https://img.shields.io/github/license/realashleybailey/Uhppote-PHP.svg?style=for-the-badge
-[license-url]: https://github.com/realashleybailey/Uhppote-PHP/blob/master/LICENSE
+[license-url]: https://github.com/realashleybailey/Uhppote-PHP/blob/master/LICENSE.md
 [product-screenshot]: images/screenshot.png
