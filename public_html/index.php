@@ -28,15 +28,19 @@ $request = $_SERVER['REQUEST_URI'];
 switch ($request) {
     case '':
     case '/':
+        template('header_inc.php');
         include_once(__DIR__ . '/login.php');
+        template('footer_inc.php');
         break;
 
     case '/admin':
     case '/admin/':
     case '/admin/main':
     case '/admin/main/':
+        template('header_inc.php');
         template('header.php');
         view('main');
+        template('footer_inc.php');
         template('footer.php');
         break;
     case '/admin/test1':

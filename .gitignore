@@ -3,3 +3,5 @@ vendor/
 .env
 .vscode/
 .DS_Store
+config.env
+composer.lock
