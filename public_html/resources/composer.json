@@ -1,0 +1,18 @@
+{
+    "$schema": "https://raw.githubusercontent.com/composer/composer/master/res/composer-schema.json",
+    "name": "realashleybailey/uhppote-php",
+    "description": "Uhppote PHP interface",
+    "type": "project",
+    "license": "GPL",
+    "require": {
+        "vlucas/phpdotenv": "^5.3"
+    },
+    "autoload": {
+        "classmap": [
+            "src/"
+        ],
+        "files": [
+            "library/templateFunctions.php"
+        ]
+    }
+}
