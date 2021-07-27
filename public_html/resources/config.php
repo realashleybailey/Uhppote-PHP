@@ -23,27 +23,8 @@
 
 require_once('vendor/autoload.php');
 
-$config = array(
-    "db" => array(
-        "db1" => array(
-            "dbname" => "database1",
-            "username" => "dbUser",
-            "password" => "pa$$",
-            "host" => "localhost"
-        )
-    ),
-    "urls" => array(
-        "baseUrl" => "http://uhppote.vhx.cloud/"
-    ),
-    "paths" => array(
-        "resources" => $_SERVER['DOCUMENT_ROOT'] . "/resources/",
-        "images" => array(
-            "content" => $_SERVER["DOCUMENT_ROOT"] . "/images/content",
-            "layout" => $_SERVER["DOCUMENT_ROOT"] . "/images/layout"
-        )
-    )
-);
-
+$dotenv = Dotenv\Dotenv::createImmutable(realpath(dirname(__FILE__) . '/../../'), 'config.env');
+$dotenv->load();
 
 /* Paths */
 defined("LIBRARY_PATH")
@@ -57,5 +38,3 @@ defined("VIEWS_PATH")
 
 
 /* Error reporting. */
-ini_set("error_reporting", "true");
-error_reporting();

@@ -5,11 +5,13 @@
     "type": "project",
     "license": "GPL",
     "require": {
-        "vlucas/phpdotenv": "^5.3"
+        "vlucas/phpdotenv": "^5.3",
+        "firebase/php-jwt": "^5.4"
     },
     "autoload": {
         "classmap": [
-            "src/"
+            "src/",
+            "src/API_modules/"
         ],
         "files": [
             "library/templateFunctions.php",
