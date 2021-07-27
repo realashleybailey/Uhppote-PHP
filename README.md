@@ -92,12 +92,11 @@ To get a local copy up and running follow these simple steps.
 
 ### Installation
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
+1. Clone the repo
    ```sh
    git clone https://github.com/realashleybailey/Uhppote-PHP.git
    ```
-3. Install Composer packages
+2. Install Composer packages
    ```sh
    composer install
    ```
