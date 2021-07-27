@@ -1,2 +1,3 @@
 composer.phar
-/public_html/resources/vendor/
+vendor/
+.env
