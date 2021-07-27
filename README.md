@@ -63,16 +63,15 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+<!-- [![Product Name Screen Shot][product-screenshot]](https://example.com) -->
 
-There are many great README templates available on GitHub, however, I didn't find one that really suit my needs so I created this enhanced one. I want to create a README template so amazing that it'll be the last one you ever need -- I think this is it.
+My aim here stems from lots of fruastration from attempting to use other ACL software, and though they have all the functions they never utilize them in any meaningfull way, so thats why I am building Uhppote PHP, a project aimed to give a Advanced UI that will let you control, view and modify your Uhppote ACL unit.
 
 Here's why:
-* Your time should be focused on creating something amazing. A project that solves a problem and helps others
-* You shouldn't be doing the same tasks over and over like creating a README from scratch
-* You should element DRY principles to the rest of your life :smile:
+* Ease of use with your access control unit
+* Friendly user interface that will port many functions that you would previously have to use bad software to view or edit
+* Why PHP, well we all know PHP is the best language out there ;), all jokes aside PHP is great for this because it can be run anywhere and with it being an open face server with a UI you will be able to access it from anywhere on your network or if your brave enough to face it to the WWW then anywhere in the world, however we advise to only run this software behind a secure firewall
 
-Of course, no one template will serve all projects since your needs may be different. So I'll be adding more in the near future. You may also suggest changes by forking this repo and creating a pull request or opening an issue. Thanks to all the people have have contributed to expanding this template!
 
 A list of commonly used resources that I find helpful are listed in the acknowledgements.
 
@@ -81,22 +80,22 @@ A list of commonly used resources that I find helpful are listed in the acknowle
 This section should list any major frameworks that you built your project using. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
 * [Bootstrap](https://getbootstrap.com)
 * [JQuery](https://jquery.com)
-* [Laravel](https://laravel.com)
+* [Composer](https://getcomposer.org/)
+* [PHP](https://php.net)
 
 
 
 <!-- GETTING STARTED -->
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+To get a local copy up and running follow these simple steps.
 
 ### Prerequisites
 
 This is an example of how to list things you need to use the software and how to install them.
-* npm
+* composer
   ```sh
-  npm install npm@latest -g
+  composer install
   ```
 
 ### Installation
