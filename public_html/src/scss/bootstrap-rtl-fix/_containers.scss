@@ -8,6 +8,7 @@
   // 100% wide container at all breakpoints
   .container-fluid {
     @include make-container();
+    overflow: hidden;
   }
 
   // Responsive containers that are 100% wide until a breakpoint

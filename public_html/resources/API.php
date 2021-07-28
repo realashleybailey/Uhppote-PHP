@@ -1,5 +1,5 @@
 <?php
-require $_SERVER['DOCUMENT_ROOT'] . '/src/vendor/autoload.php';
+require_once(realpath(dirname(__FILE__) . "/config.php"));
 
 set_error_handler("warning_handler", E_WARNING);
 
@@ -14,19 +14,21 @@ try {
     }
 } catch (Throwable | Exception | Error $e) {
     header('HTTP/1.0 400 Bad Request');
-    echo json_encode(['error' => ['message' => $e->getMessage()]]);
+    echo json_encode(['error' => ['message' => $e->getMessage(), 'line' => $e->getLine(), 'file' => $e->getFile()]]);
     exit;
 }
 
-$ROUTE  = json_decode(file_get_contents('php://input'), true)['route'];
-$DATA   = json_decode(file_get_contents('php://input'), true)['data'];
+$phpInput = json_decode(file_get_contents('php://input'), true);
+
+$ROUTE      = $phpInput['route'];
+$DATA       = (isset($phpInput['data'])) ? $phpInput['data'] : '';
 
 
 try {
     \UhppotePHP\API::Route($ROUTE, $DATA);
 } catch (Throwable | Exception | Error $e) {
     header('HTTP/1.0 400 Bad Request');
-    echo json_encode(['error' => ['message' => $e->getMessage()]]);
+    echo json_encode(['error' => ['message' => $e->getMessage(), 'line' => $e->getLine(), 'file' => $e->getFile()]]);
     exit;
 }
 

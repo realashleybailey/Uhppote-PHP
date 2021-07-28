@@ -53,7 +53,7 @@
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
                             <li><a class="dropdown-item" href="#">My profile</a></li>
                             <li><a class="dropdown-item" href="#">Settings</a></li>
-                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                            <li><a class="dropdown-item" href="/Logout">Logout</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -62,4 +62,4 @@
     </header>
     <!--Main Navigation-->
     <main style="margin-top: 58px">
-        <div class="container pt-4">
+        <div class="container pt-5">

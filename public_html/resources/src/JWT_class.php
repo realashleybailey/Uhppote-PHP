@@ -9,7 +9,7 @@ class WebAuth
 {
     static function Create()
     {
-        $secretKey = getenv('JWTkey');
+        $secretKey = getenv('CRYPTO');
         $issuedAt   = new \DateTimeImmutable();
         $expire     = $issuedAt->modify('+1 hours')->getTimestamp();
 
@@ -29,7 +29,7 @@ class WebAuth
 
     static function Verify($SERVER)
     {
-        $secretKey = getenv('JWTkey');
+        $secretKey = getenv('CRYPTO');
 
         if (isset($SERVER['HTTP_AUTHORIZATION'])) {
             if (!preg_match('/Bearer\s(\S+)/', $SERVER['HTTP_AUTHORIZATION'], $matches)) {
@@ -50,7 +50,7 @@ class WebAuth
             $token = JWT::decode($jwt, $secretKey, ['HS256']);
         } catch (ExpiredException $e) {
             header('HTTP/1.1 401 Unauthorized');
-            echo json_encode(['error' => ['message' => $e->getMessage()]]);
+            echo json_encode(['error' => ['message' => $e->getMessage(), 'line' => $e->getLine(), 'file' => $e->getFile()]]);
             die();
         }
 

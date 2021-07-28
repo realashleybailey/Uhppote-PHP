@@ -2,8 +2,12 @@ php_flag display_errors On
 
 RewriteEngine On
 RewriteBase /
+
+RewriteRule ^api/$ /resources/API.php [L,QSA,NC]
+
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^(.+)$ index.php [QSA,L]
 
 ErrorDocument 404 /404.php
+Options -Indexes

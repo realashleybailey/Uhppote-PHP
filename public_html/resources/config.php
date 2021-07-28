@@ -23,7 +23,13 @@
 
 require_once('vendor/autoload.php');
 
-$dotenv = Dotenv\Dotenv::createImmutable(realpath(dirname(__FILE__) . '/../../'), 'config.env');
+$repository = Dotenv\Repository\RepositoryBuilder::createWithNoAdapters()
+    ->addAdapter(Dotenv\Repository\Adapter\EnvConstAdapter::class)
+    ->addWriter(Dotenv\Repository\Adapter\PutenvAdapter::class)
+    ->immutable()
+    ->make();
+
+$dotenv = Dotenv\Dotenv::create($repository, realpath(dirname(__FILE__) . '/../../'), 'config.env');
 $dotenv->load();
 
 /* Paths */

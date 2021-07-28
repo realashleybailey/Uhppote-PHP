@@ -6,12 +6,14 @@
     "license": "GPL",
     "require": {
         "vlucas/phpdotenv": "^5.3",
-        "firebase/php-jwt": "^5.4"
+        "firebase/php-jwt": "^5.4",
+        "elegantweb/sanitizer": "^1.1"
     },
     "autoload": {
         "classmap": [
+            "extension/*",
             "src/",
-            "src/API_modules/"
+            "modules/"
         ],
         "files": [
             "library/templateFunctions.php",

@@ -5,16 +5,18 @@ namespace UhppotePHP;
 use Error;
 use Exception;
 use Throwable;
+// use UhppotePHP\API\Modules;
 
 class API
 {
+
+    // use \UhppotePHP\API\Modules;
+
     static function Route($ROUTE, $DATA)
     {
-        try {
-            \UhppotePHP\API\Modules::$ROUTE($DATA);
-        } catch (Throwable | Exception | Error $e) {
-            header('HTTP/1.0 400 Bad Request');
-            echo json_encode(['error' => ['message' => $e->getMessage()]]);
-        }
+        $PATH       = "UhppotePHP\\Modules\\" . $ROUTE['path'];
+        $MODULE     = $ROUTE['module'];
+
+        $PATH::$MODULE($DATA);
     }
 }

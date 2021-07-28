@@ -21,6 +21,8 @@
  * TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
+session_start();
+
 require_once(realpath(dirname(__FILE__) . "/resources/config.php"));
 
 $request = $_SERVER['REQUEST_URI'];
@@ -28,11 +30,24 @@ $request = $_SERVER['REQUEST_URI'];
 switch ($request) {
     case '':
     case '/':
-        template('header_inc.php');
         include_once(__DIR__ . '/login.php');
-        template('footer_inc.php');
-        break;
+        exit;
+    case '/Login':
+    case '/Login/':
+        include_once(__DIR__ . '/login.php');
+        exit;
+    case '/Logout':
+    case '/Logout/':
+        include_once(__DIR__ . '/logout.php');
+        exit;
+}
 
+if (str_contains($request, '/admin') && $_SESSION['LOGGED_IN'] == false) {
+    header('Location: /');
+    exit;
+}
+
+switch ($request) {
     case '/admin':
     case '/admin/':
     case '/admin/main':
@@ -45,8 +60,26 @@ switch ($request) {
         break;
     case '/admin/test1':
     case '/admin/test1/':
+        template('header_inc.php');
         template('header.php');
         view('test1');
+        template('footer_inc.php');
+        template('footer.php');
+        break;
+    case '/admin/test2':
+    case '/admin/test2/':
+        template('header_inc.php');
+        template('header.php');
+        view('test2');
+        template('footer_inc.php');
+        template('footer.php');
+        break;
+    case '/admin/settings':
+    case '/admin/settings/':
+        template('header_inc.php');
+        template('header.php');
+        view('settings');
+        template('footer_inc.php');
         template('footer.php');
         break;
 
