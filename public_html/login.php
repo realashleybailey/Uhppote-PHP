@@ -27,6 +27,7 @@ template('header_inc.php');
 if (isset($_SESSION['LOGGED_IN']) && $_SESSION['LOGGED_IN'] == true) {
     header('Location: /admin');
 }
+
 ?>
 <style>
     html,
@@ -94,6 +95,9 @@ if (isset($_SESSION['LOGGED_IN']) && $_SESSION['LOGGED_IN'] == true) {
             </div>
 
             <button type="submit" class="btn btn-primary btn-block">Login</button>
+
+            <div id="errorInfo" class="alert bg-danger m-0 mt-3 p-2 text-center text-white" style="display:none; font-family: 'Roboto',sans-serif;">
+            </div>
         </form>
     </div>
 </div>

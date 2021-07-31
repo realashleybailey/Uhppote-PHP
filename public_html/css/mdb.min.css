@@ -6719,7 +6719,140 @@ fieldset:disabled .btn {
   outline: 0;
 }
 
-/* line 86, ../../../../../Users/ashley/Documents/GitHub/Uhppote-PHP/public_html/src/scss/bootstrap-rtl-fix/_modal.scss */
+@media (min-width: 768px) {
+  /* line 86, ../../../../../Users/ashley/Documents/GitHub/Uhppote-PHP/public_html/src/scss/bootstrap-rtl-fix/_modal.scss */
+  .modal .modal-dialog.modal-top {
+    top: 0;
+  }
+  /* line 89, ../../../../../Users/ashley/Documents/GitHub/Uhppote-PHP/public_html/src/scss/bootstrap-rtl-fix/_modal.scss */
+  .modal .modal-dialog.modal-left {
+    left: 0;
+  }
+  /* line 92, ../../../../../Users/ashley/Documents/GitHub/Uhppote-PHP/public_html/src/scss/bootstrap-rtl-fix/_modal.scss */
+  .modal .modal-dialog.modal-right {
+    right: 0;
+  }
+  /* line 95, ../../../../../Users/ashley/Documents/GitHub/Uhppote-PHP/public_html/src/scss/bootstrap-rtl-fix/_modal.scss */
+  .modal .modal-dialog.modal-bottom {
+    bottom: 0;
+  }
+  /* line 98, ../../../../../Users/ashley/Documents/GitHub/Uhppote-PHP/public_html/src/scss/bootstrap-rtl-fix/_modal.scss */
+  .modal .modal-dialog.modal-top-left {
+    top: 10px;
+    left: 10px;
+  }
+  /* line 102, ../../../../../Users/ashley/Documents/GitHub/Uhppote-PHP/public_html/src/scss/bootstrap-rtl-fix/_modal.scss */
+  .modal .modal-dialog.modal-top-right {
+    top: 10px;
+    right: 10px;
+  }
+  /* line 106, ../../../../../Users/ashley/Documents/GitHub/Uhppote-PHP/public_html/src/scss/bootstrap-rtl-fix/_modal.scss */
+  .modal .modal-dialog.modal-bottom-left {
+    bottom: 10px;
+    left: 10px;
+  }
+  /* line 110, ../../../../../Users/ashley/Documents/GitHub/Uhppote-PHP/public_html/src/scss/bootstrap-rtl-fix/_modal.scss */
+  .modal .modal-dialog.modal-bottom-right {
+    right: 10px;
+    bottom: 10px;
+  }
+}
+
+/* line 116, ../../../../../Users/ashley/Documents/GitHub/Uhppote-PHP/public_html/src/scss/bootstrap-rtl-fix/_modal.scss */
+.modal.fade.top:not(.show) .modal-dialog {
+  -webkit-transform: translate3d(0, -25%, 0);
+  transform: translate3d(0, -25%, 0);
+}
+
+/* line 121, ../../../../../Users/ashley/Documents/GitHub/Uhppote-PHP/public_html/src/scss/bootstrap-rtl-fix/_modal.scss */
+.modal.fade.right:not(.show) .modal-dialog {
+  -webkit-transform: translate3d(25%, 0, 0);
+  transform: translate3d(25%, 0, 0);
+}
+
+/* line 126, ../../../../../Users/ashley/Documents/GitHub/Uhppote-PHP/public_html/src/scss/bootstrap-rtl-fix/_modal.scss */
+.modal.fade.bottom:not(.show) .modal-dialog {
+  -webkit-transform: translate3d(0, 25%, 0);
+  transform: translate3d(0, 25%, 0);
+}
+
+/* line 131, ../../../../../Users/ashley/Documents/GitHub/Uhppote-PHP/public_html/src/scss/bootstrap-rtl-fix/_modal.scss */
+.modal.fade.left:not(.show) .modal-dialog {
+  -webkit-transform: translate3d(-25%, 0, 0);
+  transform: translate3d(-25%, 0, 0);
+}
+
+@media (min-width: 992px) {
+  /* line 137, ../../../../../Users/ashley/Documents/GitHub/Uhppote-PHP/public_html/src/scss/bootstrap-rtl-fix/_modal.scss */
+  .modal .modal-side {
+    position: absolute;
+    width: 100%;
+    right: 10px;
+    bottom: 10px;
+    margin: 0;
+  }
+  /* line 144, ../../../../../Users/ashley/Documents/GitHub/Uhppote-PHP/public_html/src/scss/bootstrap-rtl-fix/_modal.scss */
+  .modal .modal-frame {
+    position: absolute;
+    max-width: 100%;
+    width: 100%;
+    margin: 0;
+  }
+}
+
+/* line 152, ../../../../../Users/ashley/Documents/GitHub/Uhppote-PHP/public_html/src/scss/bootstrap-rtl-fix/_modal.scss */
+.modal-open .modal.frame {
+  overflow-y: hidden;
+}
+
+/* line 156, ../../../../../Users/ashley/Documents/GitHub/Uhppote-PHP/public_html/src/scss/bootstrap-rtl-fix/_modal.scss */
+.modal-non-invasive-open {
+  overflow-y: auto;
+}
+
+/* line 160, ../../../../../Users/ashley/Documents/GitHub/Uhppote-PHP/public_html/src/scss/bootstrap-rtl-fix/_modal.scss */
+.modal-non-invasive-open .modal.modal-non-invasive-show {
+  display: table;
+}
+
+@media (min-width: 992px) {
+  /* line 165, ../../../../../Users/ashley/Documents/GitHub/Uhppote-PHP/public_html/src/scss/bootstrap-rtl-fix/_modal.scss */
+  .modal-non-invasive-open .modal.modal-non-invasive-show .modal-dialog.modal-bottom-left, .modal-non-invasive-open .modal.modal-non-invasive-show .modal-dialog.modal-bottom-right, .modal-non-invasive-open .modal.modal-non-invasive-show .modal-side {
+    bottom: 0;
+  }
+  /* line 168, ../../../../../Users/ashley/Documents/GitHub/Uhppote-PHP/public_html/src/scss/bootstrap-rtl-fix/_modal.scss */
+  .modal-non-invasive-open .modal.modal-non-invasive-show.modal.frame.bottom, .modal-non-invasive-open .modal.modal-non-invasive-show.modal.frame.bottom .modal-content {
+    -webkit-box-shadow: 0 -10px 20px 0 rgba(0, 0, 0, 0.05);
+    box-shadow: 0 -10px 20px 0 rgba(0, 0, 0, 0.05);
+  }
+  /* line 172, ../../../../../Users/ashley/Documents/GitHub/Uhppote-PHP/public_html/src/scss/bootstrap-rtl-fix/_modal.scss */
+  .modal-non-invasive-open .modal.modal-non-invasive-show.modal.frame.top {
+    -webkit-box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -1px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -1px rgba(0, 0, 0, 0.05);
+  }
+  /* line 176, ../../../../../Users/ashley/Documents/GitHub/Uhppote-PHP/public_html/src/scss/bootstrap-rtl-fix/_modal.scss */
+  .modal-non-invasive-open .modal.modal-non-invasive-show .modal-side.modal-bottom-left .modal-content, .modal-non-invasive-open .modal.modal-non-invasive-show .modal-side.modal-bottom-right .modal-content {
+    -webkit-box-shadow: 0 -10px 20px 0 rgba(0, 0, 0, 0.05);
+    box-shadow: 0 -10px 20px 0 rgba(0, 0, 0, 0.05);
+  }
+}
+
+/* line 182, ../../../../../Users/ashley/Documents/GitHub/Uhppote-PHP/public_html/src/scss/bootstrap-rtl-fix/_modal.scss */
+.modal-non-invasive-open .modal.modal-non-invasive-show .modal-dialog.modal-bottom-right {
+  right: 0;
+}
+
+/* line 186, ../../../../../Users/ashley/Documents/GitHub/Uhppote-PHP/public_html/src/scss/bootstrap-rtl-fix/_modal.scss */
+.modal-non-invasive-open .modal.modal-non-invasive-show .modal-dialog.modal-bottom-left, .modal-non-invasive-open .modal.modal-non-invasive-show .modal-dialog.modal-top-left {
+  left: 0;
+}
+
+/* line 190, ../../../../../Users/ashley/Documents/GitHub/Uhppote-PHP/public_html/src/scss/bootstrap-rtl-fix/_modal.scss */
+.modal-non-invasive-open .modal.modal-non-invasive-show .modal-side {
+  right: 0;
+}
+
+/* line 195, ../../../../../Users/ashley/Documents/GitHub/Uhppote-PHP/public_html/src/scss/bootstrap-rtl-fix/_modal.scss */
 .modal-backdrop {
   position: fixed;
   top: 0;
@@ -6730,17 +6863,17 @@ fieldset:disabled .btn {
   background-color: #000;
 }
 
-/* line 96, ../../../../../Users/ashley/Documents/GitHub/Uhppote-PHP/public_html/src/scss/bootstrap-rtl-fix/_modal.scss */
+/* line 205, ../../../../../Users/ashley/Documents/GitHub/Uhppote-PHP/public_html/src/scss/bootstrap-rtl-fix/_modal.scss */
 .modal-backdrop.fade {
   opacity: 0;
 }
 
-/* line 99, ../../../../../Users/ashley/Documents/GitHub/Uhppote-PHP/public_html/src/scss/bootstrap-rtl-fix/_modal.scss */
+/* line 208, ../../../../../Users/ashley/Documents/GitHub/Uhppote-PHP/public_html/src/scss/bootstrap-rtl-fix/_modal.scss */
 .modal-backdrop.show {
   opacity: 0.5;
 }
 
-/* line 106, ../../../../../Users/ashley/Documents/GitHub/Uhppote-PHP/public_html/src/scss/bootstrap-rtl-fix/_modal.scss */
+/* line 215, ../../../../../Users/ashley/Documents/GitHub/Uhppote-PHP/public_html/src/scss/bootstrap-rtl-fix/_modal.scss */
 .modal-header {
   display: flex;
   flex-shrink: 0;
@@ -6752,26 +6885,26 @@ fieldset:disabled .btn {
   border-top-right-radius: calc(0.5rem - 1px);
 }
 
-/* line 115, ../../../../../Users/ashley/Documents/GitHub/Uhppote-PHP/public_html/src/scss/bootstrap-rtl-fix/_modal.scss */
+/* line 224, ../../../../../Users/ashley/Documents/GitHub/Uhppote-PHP/public_html/src/scss/bootstrap-rtl-fix/_modal.scss */
 .modal-header .btn-close {
   padding: 0.5rem 0.5rem;
   margin: -0.5rem -0.5rem -0.5rem auto;
 }
 
-/* line 123, ../../../../../Users/ashley/Documents/GitHub/Uhppote-PHP/public_html/src/scss/bootstrap-rtl-fix/_modal.scss */
+/* line 232, ../../../../../Users/ashley/Documents/GitHub/Uhppote-PHP/public_html/src/scss/bootstrap-rtl-fix/_modal.scss */
 .modal-title {
   margin-bottom: 0;
   line-height: 1.6;
 }
 
-/* line 130, ../../../../../Users/ashley/Documents/GitHub/Uhppote-PHP/public_html/src/scss/bootstrap-rtl-fix/_modal.scss */
+/* line 239, ../../../../../Users/ashley/Documents/GitHub/Uhppote-PHP/public_html/src/scss/bootstrap-rtl-fix/_modal.scss */
 .modal-body {
   position: relative;
   flex: 1 1 auto;
   padding: 1rem;
 }
 
-/* line 139, ../../../../../Users/ashley/Documents/GitHub/Uhppote-PHP/public_html/src/scss/bootstrap-rtl-fix/_modal.scss */
+/* line 248, ../../../../../Users/ashley/Documents/GitHub/Uhppote-PHP/public_html/src/scss/bootstrap-rtl-fix/_modal.scss */
 .modal-footer {
   display: flex;
   flex-wrap: wrap;
@@ -6784,33 +6917,33 @@ fieldset:disabled .btn {
   border-bottom-left-radius: calc(0.5rem - 1px);
 }
 
-/* line 152, ../../../../../Users/ashley/Documents/GitHub/Uhppote-PHP/public_html/src/scss/bootstrap-rtl-fix/_modal.scss */
+/* line 261, ../../../../../Users/ashley/Documents/GitHub/Uhppote-PHP/public_html/src/scss/bootstrap-rtl-fix/_modal.scss */
 .modal-footer > * {
   margin: 0.25rem;
 }
 
 @media (min-width: 576px) {
-  /* line 160, ../../../../../Users/ashley/Documents/GitHub/Uhppote-PHP/public_html/src/scss/bootstrap-rtl-fix/_modal.scss */
+  /* line 269, ../../../../../Users/ashley/Documents/GitHub/Uhppote-PHP/public_html/src/scss/bootstrap-rtl-fix/_modal.scss */
   .modal-dialog {
     max-width: 500px;
     margin: 1.75rem auto;
   }
-  /* line 165, ../../../../../Users/ashley/Documents/GitHub/Uhppote-PHP/public_html/src/scss/bootstrap-rtl-fix/_modal.scss */
+  /* line 274, ../../../../../Users/ashley/Documents/GitHub/Uhppote-PHP/public_html/src/scss/bootstrap-rtl-fix/_modal.scss */
   .modal-dialog-scrollable {
     height: calc(100% - 3.5rem);
   }
-  /* line 169, ../../../../../Users/ashley/Documents/GitHub/Uhppote-PHP/public_html/src/scss/bootstrap-rtl-fix/_modal.scss */
+  /* line 278, ../../../../../Users/ashley/Documents/GitHub/Uhppote-PHP/public_html/src/scss/bootstrap-rtl-fix/_modal.scss */
   .modal-dialog-centered {
     min-height: calc(100% - 3.5rem);
   }
-  /* line 177, ../../../../../Users/ashley/Documents/GitHub/Uhppote-PHP/public_html/src/scss/bootstrap-rtl-fix/_modal.scss */
+  /* line 286, ../../../../../Users/ashley/Documents/GitHub/Uhppote-PHP/public_html/src/scss/bootstrap-rtl-fix/_modal.scss */
   .modal-sm {
     max-width: 300px;
   }
 }
 
 @media (min-width: 992px) {
-  /* line 183, ../../../../../Users/ashley/Documents/GitHub/Uhppote-PHP/public_html/src/scss/bootstrap-rtl-fix/_modal.scss */
+  /* line 292, ../../../../../Users/ashley/Documents/GitHub/Uhppote-PHP/public_html/src/scss/bootstrap-rtl-fix/_modal.scss */
   .modal-lg,
   .modal-xl {
     max-width: 800px;
@@ -6818,13 +6951,13 @@ fieldset:disabled .btn {
 }
 
 @media (min-width: 1200px) {
-  /* line 190, ../../../../../Users/ashley/Documents/GitHub/Uhppote-PHP/public_html/src/scss/bootstrap-rtl-fix/_modal.scss */
+  /* line 299, ../../../../../Users/ashley/Documents/GitHub/Uhppote-PHP/public_html/src/scss/bootstrap-rtl-fix/_modal.scss */
   .modal-xl {
     max-width: 1140px;
   }
 }
 
-/* line 201, ../../../../../Users/ashley/Documents/GitHub/Uhppote-PHP/public_html/src/scss/bootstrap-rtl-fix/_modal.scss */
+/* line 310, ../../../../../Users/ashley/Documents/GitHub/Uhppote-PHP/public_html/src/scss/bootstrap-rtl-fix/_modal.scss */
 .modal-fullscreen {
   width: 100vw;
   max-width: none;
@@ -6832,163 +6965,163 @@ fieldset:disabled .btn {
   margin: 0;
 }
 
-/* line 207, ../../../../../Users/ashley/Documents/GitHub/Uhppote-PHP/public_html/src/scss/bootstrap-rtl-fix/_modal.scss */
+/* line 316, ../../../../../Users/ashley/Documents/GitHub/Uhppote-PHP/public_html/src/scss/bootstrap-rtl-fix/_modal.scss */
 .modal-fullscreen .modal-content {
   height: 100%;
   border: 0;
   border-radius: 0;
 }
 
-/* line 213, ../../../../../Users/ashley/Documents/GitHub/Uhppote-PHP/public_html/src/scss/bootstrap-rtl-fix/_modal.scss */
+/* line 322, ../../../../../Users/ashley/Documents/GitHub/Uhppote-PHP/public_html/src/scss/bootstrap-rtl-fix/_modal.scss */
 .modal-fullscreen .modal-header {
   border-radius: 0;
 }
 
-/* line 217, ../../../../../Users/ashley/Documents/GitHub/Uhppote-PHP/public_html/src/scss/bootstrap-rtl-fix/_modal.scss */
+/* line 326, ../../../../../Users/ashley/Documents/GitHub/Uhppote-PHP/public_html/src/scss/bootstrap-rtl-fix/_modal.scss */
 .modal-fullscreen .modal-body {
   overflow-y: auto;
 }
 
-/* line 221, ../../../../../Users/ashley/Documents/GitHub/Uhppote-PHP/public_html/src/scss/bootstrap-rtl-fix/_modal.scss */
+/* line 330, ../../../../../Users/ashley/Documents/GitHub/Uhppote-PHP/public_html/src/scss/bootstrap-rtl-fix/_modal.scss */
 .modal-fullscreen .modal-footer {
   border-radius: 0;
 }
 
 @media (max-width: 575.98px) {
-  /* line 201, ../../../../../Users/ashley/Documents/GitHub/Uhppote-PHP/public_html/src/scss/bootstrap-rtl-fix/_modal.scss */
+  /* line 310, ../../../../../Users/ashley/Documents/GitHub/Uhppote-PHP/public_html/src/scss/bootstrap-rtl-fix/_modal.scss */
   .modal-fullscreen-sm-down {
     width: 100vw;
     max-width: none;
     height: 100%;
     margin: 0;
   }
-  /* line 207, ../../../../../Users/ashley/Documents/GitHub/Uhppote-PHP/public_html/src/scss/bootstrap-rtl-fix/_modal.scss */
+  /* line 316, ../../../../../Users/ashley/Documents/GitHub/Uhppote-PHP/public_html/src/scss/bootstrap-rtl-fix/_modal.scss */
   .modal-fullscreen-sm-down .modal-content {
     height: 100%;
     border: 0;
     border-radius: 0;
   }
-  /* line 213, ../../../../../Users/ashley/Documents/GitHub/Uhppote-PHP/public_html/src/scss/bootstrap-rtl-fix/_modal.scss */
+  /* line 322, ../../../../../Users/ashley/Documents/GitHub/Uhppote-PHP/public_html/src/scss/bootstrap-rtl-fix/_modal.scss */
   .modal-fullscreen-sm-down .modal-header {
     border-radius: 0;
   }
-  /* line 217, ../../../../../Users/ashley/Documents/GitHub/Uhppote-PHP/public_html/src/scss/bootstrap-rtl-fix/_modal.scss */
+  /* line 326, ../../../../../Users/ashley/Documents/GitHub/Uhppote-PHP/public_html/src/scss/bootstrap-rtl-fix/_modal.scss */
   .modal-fullscreen-sm-down .modal-body {
     overflow-y: auto;
   }
-  /* line 221, ../../../../../Users/ashley/Documents/GitHub/Uhppote-PHP/public_html/src/scss/bootstrap-rtl-fix/_modal.scss */
+  /* line 330, ../../../../../Users/ashley/Documents/GitHub/Uhppote-PHP/public_html/src/scss/bootstrap-rtl-fix/_modal.scss */
   .modal-fullscreen-sm-down .modal-footer {
     border-radius: 0;
   }
 }
 
 @media (max-width: 767.98px) {
-  /* line 201, ../../../../../Users/ashley/Documents/GitHub/Uhppote-PHP/public_html/src/scss/bootstrap-rtl-fix/_modal.scss */
+  /* line 310, ../../../../../Users/ashley/Documents/GitHub/Uhppote-PHP/public_html/src/scss/bootstrap-rtl-fix/_modal.scss */
   .modal-fullscreen-md-down {
     width: 100vw;
     max-width: none;
     height: 100%;
     margin: 0;
   }
-  /* line 207, ../../../../../Users/ashley/Documents/GitHub/Uhppote-PHP/public_html/src/scss/bootstrap-rtl-fix/_modal.scss */
+  /* line 316, ../../../../../Users/ashley/Documents/GitHub/Uhppote-PHP/public_html/src/scss/bootstrap-rtl-fix/_modal.scss */
   .modal-fullscreen-md-down .modal-content {
     height: 100%;
     border: 0;
     border-radius: 0;
   }
-  /* line 213, ../../../../../Users/ashley/Documents/GitHub/Uhppote-PHP/public_html/src/scss/bootstrap-rtl-fix/_modal.scss */
+  /* line 322, ../../../../../Users/ashley/Documents/GitHub/Uhppote-PHP/public_html/src/scss/bootstrap-rtl-fix/_modal.scss */
   .modal-fullscreen-md-down .modal-header {
     border-radius: 0;
   }
-  /* line 217, ../../../../../Users/ashley/Documents/GitHub/Uhppote-PHP/public_html/src/scss/bootstrap-rtl-fix/_modal.scss */
+  /* line 326, ../../../../../Users/ashley/Documents/GitHub/Uhppote-PHP/public_html/src/scss/bootstrap-rtl-fix/_modal.scss */
   .modal-fullscreen-md-down .modal-body {
     overflow-y: auto;
   }
-  /* line 221, ../../../../../Users/ashley/Documents/GitHub/Uhppote-PHP/public_html/src/scss/bootstrap-rtl-fix/_modal.scss */
+  /* line 330, ../../../../../Users/ashley/Documents/GitHub/Uhppote-PHP/public_html/src/scss/bootstrap-rtl-fix/_modal.scss */
   .modal-fullscreen-md-down .modal-footer {
     border-radius: 0;
   }
 }
 
 @media (max-width: 991.98px) {
-  /* line 201, ../../../../../Users/ashley/Documents/GitHub/Uhppote-PHP/public_html/src/scss/bootstrap-rtl-fix/_modal.scss */
+  /* line 310, ../../../../../Users/ashley/Documents/GitHub/Uhppote-PHP/public_html/src/scss/bootstrap-rtl-fix/_modal.scss */
   .modal-fullscreen-lg-down {
     width: 100vw;
     max-width: none;
     height: 100%;
     margin: 0;
   }
-  /* line 207, ../../../../../Users/ashley/Documents/GitHub/Uhppote-PHP/public_html/src/scss/bootstrap-rtl-fix/_modal.scss */
+  /* line 316, ../../../../../Users/ashley/Documents/GitHub/Uhppote-PHP/public_html/src/scss/bootstrap-rtl-fix/_modal.scss */
   .modal-fullscreen-lg-down .modal-content {
     height: 100%;
     border: 0;
     border-radius: 0;
   }
-  /* line 213, ../../../../../Users/ashley/Documents/GitHub/Uhppote-PHP/public_html/src/scss/bootstrap-rtl-fix/_modal.scss */
+  /* line 322, ../../../../../Users/ashley/Documents/GitHub/Uhppote-PHP/public_html/src/scss/bootstrap-rtl-fix/_modal.scss */
   .modal-fullscreen-lg-down .modal-header {
     border-radius: 0;
   }
-  /* line 217, ../../../../../Users/ashley/Documents/GitHub/Uhppote-PHP/public_html/src/scss/bootstrap-rtl-fix/_modal.scss */
+  /* line 326, ../../../../../Users/ashley/Documents/GitHub/Uhppote-PHP/public_html/src/scss/bootstrap-rtl-fix/_modal.scss */
   .modal-fullscreen-lg-down .modal-body {
     overflow-y: auto;
   }
-  /* line 221, ../../../../../Users/ashley/Documents/GitHub/Uhppote-PHP/public_html/src/scss/bootstrap-rtl-fix/_modal.scss */
+  /* line 330, ../../../../../Users/ashley/Documents/GitHub/Uhppote-PHP/public_html/src/scss/bootstrap-rtl-fix/_modal.scss */
   .modal-fullscreen-lg-down .modal-footer {
     border-radius: 0;
   }
 }
 
 @media (max-width: 1199.98px) {
-  /* line 201, ../../../../../Users/ashley/Documents/GitHub/Uhppote-PHP/public_html/src/scss/bootstrap-rtl-fix/_modal.scss */
+  /* line 310, ../../../../../Users/ashley/Documents/GitHub/Uhppote-PHP/public_html/src/scss/bootstrap-rtl-fix/_modal.scss */
   .modal-fullscreen-xl-down {
     width: 100vw;
     max-width: none;
     height: 100%;
     margin: 0;
   }
-  /* line 207, ../../../../../Users/ashley/Documents/GitHub/Uhppote-PHP/public_html/src/scss/bootstrap-rtl-fix/_modal.scss */
+  /* line 316, ../../../../../Users/ashley/Documents/GitHub/Uhppote-PHP/public_html/src/scss/bootstrap-rtl-fix/_modal.scss */
   .modal-fullscreen-xl-down .modal-content {
     height: 100%;
     border: 0;
     border-radius: 0;
   }
-  /* line 213, ../../../../../Users/ashley/Documents/GitHub/Uhppote-PHP/public_html/src/scss/bootstrap-rtl-fix/_modal.scss */
+  /* line 322, ../../../../../Users/ashley/Documents/GitHub/Uhppote-PHP/public_html/src/scss/bootstrap-rtl-fix/_modal.scss */
   .modal-fullscreen-xl-down .modal-header {
     border-radius: 0;
   }
-  /* line 217, ../../../../../Users/ashley/Documents/GitHub/Uhppote-PHP/public_html/src/scss/bootstrap-rtl-fix/_modal.scss */
+  /* line 326, ../../../../../Users/ashley/Documents/GitHub/Uhppote-PHP/public_html/src/scss/bootstrap-rtl-fix/_modal.scss */
   .modal-fullscreen-xl-down .modal-body {
     overflow-y: auto;
   }
-  /* line 221, ../../../../../Users/ashley/Documents/GitHub/Uhppote-PHP/public_html/src/scss/bootstrap-rtl-fix/_modal.scss */
+  /* line 330, ../../../../../Users/ashley/Documents/GitHub/Uhppote-PHP/public_html/src/scss/bootstrap-rtl-fix/_modal.scss */
   .modal-fullscreen-xl-down .modal-footer {
     border-radius: 0;
   }
 }
 
 @media (max-width: 1399.98px) {
-  /* line 201, ../../../../../Users/ashley/Documents/GitHub/Uhppote-PHP/public_html/src/scss/bootstrap-rtl-fix/_modal.scss */
+  /* line 310, ../../../../../Users/ashley/Documents/GitHub/Uhppote-PHP/public_html/src/scss/bootstrap-rtl-fix/_modal.scss */
   .modal-fullscreen-xxl-down {
     width: 100vw;
     max-width: none;
     height: 100%;
     margin: 0;
   }
-  /* line 207, ../../../../../Users/ashley/Documents/GitHub/Uhppote-PHP/public_html/src/scss/bootstrap-rtl-fix/_modal.scss */
+  /* line 316, ../../../../../Users/ashley/Documents/GitHub/Uhppote-PHP/public_html/src/scss/bootstrap-rtl-fix/_modal.scss */
   .modal-fullscreen-xxl-down .modal-content {
     height: 100%;
     border: 0;
     border-radius: 0;
   }
-  /* line 213, ../../../../../Users/ashley/Documents/GitHub/Uhppote-PHP/public_html/src/scss/bootstrap-rtl-fix/_modal.scss */
+  /* line 322, ../../../../../Users/ashley/Documents/GitHub/Uhppote-PHP/public_html/src/scss/bootstrap-rtl-fix/_modal.scss */
   .modal-fullscreen-xxl-down .modal-header {
     border-radius: 0;
   }
-  /* line 217, ../../../../../Users/ashley/Documents/GitHub/Uhppote-PHP/public_html/src/scss/bootstrap-rtl-fix/_modal.scss */
+  /* line 326, ../../../../../Users/ashley/Documents/GitHub/Uhppote-PHP/public_html/src/scss/bootstrap-rtl-fix/_modal.scss */
   .modal-fullscreen-xxl-down .modal-body {
     overflow-y: auto;
   }
-  /* line 221, ../../../../../Users/ashley/Documents/GitHub/Uhppote-PHP/public_html/src/scss/bootstrap-rtl-fix/_modal.scss */
+  /* line 330, ../../../../../Users/ashley/Documents/GitHub/Uhppote-PHP/public_html/src/scss/bootstrap-rtl-fix/_modal.scss */
   .modal-fullscreen-xxl-down .modal-footer {
     border-radius: 0;
   }
@@ -20729,4 +20862,4 @@ fieldset:disabled
   font-size: 1.7rem;
 }
 
-/*# sourceMappingURL=mdb.free.css.map */
+/*# sourceMappingURL=mdb.min.css.map */

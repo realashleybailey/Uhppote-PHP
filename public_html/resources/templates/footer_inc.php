@@ -25,6 +25,7 @@
 
 </div>
 </main>
-<script type="text/javascript" src="/js/mdb.min.js"></script>
-<script type="text/javascript" src="/js/jquery-3.6.0.min.js"></script>
-<script type="text/javascript" src="/js/main.js"></script>
+<!-- <script src="/js/jquery-3.6.0.min.js"></script>
+<script src="/js/mdb.min.js"></script> -->
+<!-- <script type="text/javascript" src="http://localhost:9000/main.js"></script> -->
+<script src="/js/main.js"></script>

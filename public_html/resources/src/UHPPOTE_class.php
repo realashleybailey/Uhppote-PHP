@@ -1032,7 +1032,7 @@ class UhppoteAPI
 
     private function debug($msg)
     {
-        echo $msg . "\n";
+        // echo $msg . "\n";
     }
 
     /**

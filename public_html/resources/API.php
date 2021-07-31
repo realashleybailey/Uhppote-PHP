@@ -1,4 +1,7 @@
 <?php
+
+use Illuminate\Support\Facades\Log;
+
 require_once(realpath(dirname(__FILE__) . "/config.php"));
 
 set_error_handler("warning_handler", E_WARNING);
@@ -6,7 +9,6 @@ set_error_handler("warning_handler", E_WARNING);
 $DATA = '';
 
 try {
-
     UhppotePHP\JWT\WebAuth::Verify(getallheaders());
 
     if (json_decode(file_get_contents('php://input'), true) == null) {
@@ -28,7 +30,14 @@ try {
     \UhppotePHP\API::Route($ROUTE, $DATA);
 } catch (Throwable | Exception | Error $e) {
     header('HTTP/1.0 400 Bad Request');
-    echo json_encode(['error' => ['message' => $e->getMessage(), 'line' => $e->getLine(), 'file' => $e->getFile()]]);
+    echo json_encode([
+        'error' => [
+            'message' => $e->getMessage(),
+            'type' => $e->getCode(),
+            'line' => $e->getLine(),
+            'file' => $e->getFile()
+        ]
+    ]);
     exit;
 }
 

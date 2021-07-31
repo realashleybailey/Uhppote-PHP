@@ -34,6 +34,13 @@
             </div>
         </nav>
 
+        <script type="text/javascript">
+            var connection = new WebSocket('ws://localhost:62183');
+            connection.onmessage = function(e) {
+                location.reload();
+            };
+        </script>
+
         <nav id="main-navbar" class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
             <div class="container-fluid">
 

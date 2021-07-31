@@ -3,6 +3,12 @@
 namespace UhppotePHP\Modules;
 
 use Elegant\Sanitizer\Sanitizer;
+use UhppotePHP\UhppoteException;
+use UhppotePHP\ExceptionCodes;
+
+class LoginException extends UhppoteException
+{
+}
 
 class Login
 {
@@ -14,25 +20,33 @@ class Login
 
         $DATAclean = [
             'username' => $DATA['username'],
-            'password' => crypt($DATA['password'], getenv('CRYPTO')),
+            'password' => $DATA['password'],
             'remember' => $DATA['remember']
         ];
 
         $FILTERS = [
             'username' => \UhppotePHP\Extensions\Filters\MySQL::class,
-            'password' => fn ($value, array $options = []) => crypt($value, getenv('CRYPTO')),
+            'password' => fn ($value, array $options = []) => md5($value),
             'remember' => \UhppotePHP\Extensions\Filters\Boolean::class
         ];
 
         $sanatize = new Sanitizer($DATAclean, $FILTERS);
         $clean = $sanatize->sanitize();
 
-        $check = $db->query("SELECT password FROM users_login WHERE username='{$clean['username']}'")->fetchArray();
+        $check = $db->query("SELECT password FROM users_login WHERE username='{$clean['username']}'");
 
-        if ($clean['password'] == (isset($check['password'])) ? $check['password'] : '') {
-            $_SESSION['LOGGED_IN'] = true;
+        if ($check->numRows() == 0) {
+            throw new LoginException("Account not found!", ExceptionCodes::Login);
         }
 
-        echo json_encode(['redirect' => '/admin/']);
+        $login = $check->fetchArray();
+
+        if ($login['password'] === $clean['password']) {
+            $_SESSION['LOGGED_IN'] = true;
+            echo json_encode(['redirect' => '/admin/']);
+            exit;
+        }
+
+        throw new LoginException("Login details are wrong!", ExceptionCodes::Login);
     }
 }
