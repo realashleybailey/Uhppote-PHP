@@ -1,0 +1,30 @@
+{
+  "name": "public_html",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack",
+    "start": "npx webpack serve",
+    "scss-compile": "node-sass -rw src/scss -o css/",
+    "watch": "npm run scss-compile"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "console": "^0.7.2",
+    "i": "^0.3.6",
+    "jquery": "^3.6.0",
+    "lodash": "^4.17.21",
+    "mdbootstrap": "^4.19.2",
+    "npm": "^7.20.2",
+    "whatwg-fetch": "^3.6.2"
+  },
+  "devDependencies": {
+    "@types/jquery": "^3.5.6",
+    "webpack": "^5.47.0",
+    "webpack-cli": "^4.7.2",
+    "webpack-dev-server": "^3.11.2"
+  }
+}
