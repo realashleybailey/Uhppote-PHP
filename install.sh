@@ -49,7 +49,7 @@ installPHP() {
     # PHP and Modules
     echo -e "\n${Cyan} * Installing PHP 8 and common Modules.. ${Color_Off}"
     
-    sudo add-apt-repository ppa:ondrej/php -y
+    sudo add-apt-repository -y ppa:ondrej/php
     
     sudo apt-get -qy install ca-certificates apt-transport-https software-properties-common
     sudo apt-get -qy install php8.0 libapache2-mod-php8.0 php-curl php-dev php-gd php-gettext php-imagick php-intl php-mbstring php-mysql php-pear php-pspell php-recode php-xml php-zip
