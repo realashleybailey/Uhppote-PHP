@@ -49,15 +49,16 @@ installPHP() {
     # PHP and Modules
     echo -e "\n${Cyan} * Installing PHP 8 and common Modules.. ${Color_Off}"
     
-    sudo apt-get install -qy ca-certificates apt-transport-https software-properties-common
-    sudo add-apt-repository ppa:ondrej/php
+    sudo add-apt-repository ppa:ondrej/php -y
+    
+    sudo apt-get -qy install ca-certificates apt-transport-https software-properties-common
     sudo apt-get -qy install php8.0 libapache2-mod-php8.0 php-curl php-dev php-gd php-gettext php-imagick php-intl php-mbstring php-mysql php-pear php-pspell php-recode php-xml php-zip
-    sudo apt-get install -qy php8.0-fpm libapache2-mod-fcgid
-    sudo apt-get install -qy php-mysql
-    sudo apt-get install -qy php-curl
-    sudo apt-get install -qy php-imagick
-    sudo apt-get install -qy php-mbstring
-    sudo apt-get install -qy php-xml
+    sudo apt-get -qy install php8.0-fpm libapache2-mod-fcgid
+    sudo apt-get -qy install php-mysql
+    sudo apt-get -qy install php-curl
+    sudo apt-get -qy install php-imagick
+    sudo apt-get -qy install php-mbstring
+    sudo apt-get -qy install php-xml
     
     sudo a2enmod proxy_fcgi setenvif
     sudo a2enconf php8.0-fpm
