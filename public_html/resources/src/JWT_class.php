@@ -2,6 +2,7 @@
 
 namespace UhppotePHP\JWT;
 
+use Exception;
 use Firebase\JWT\ExpiredException;
 use Firebase\JWT\JWT;
 
@@ -30,21 +31,24 @@ class WebAuth
     static function Verify($SERVER)
     {
         $secretKey = getenv('CRYPTO');
+        $matches = [];
 
-        if (isset($SERVER['HTTP_AUTHORIZATION'])) {
-            if (!preg_match('/Bearer\s(\S+)/', $SERVER['HTTP_AUTHORIZATION'], $matches)) {
+        if (isset($SERVER['Authorization'])) {
+            if (!preg_match('/Bearer\s(\S+)/', $SERVER['Authorization'], $matches)) {
                 header('HTTP/1.0 400 Bad Request');
                 echo 'Token not found in request 1';
                 exit;
             }
         }
 
-        $jwt = $matches[1];
-        if (!$jwt) {
+        if (!isset($matches[1])) {
             // No token was able to be extracted from the authorization header
             header('HTTP/1.0 400 Bad Request');
+            throw new Exception(json_encode(getallheaders()));
             exit;
         }
+
+        $jwt = $matches[1];
 
         try {
             $token = JWT::decode($jwt, $secretKey, ['HS256']);

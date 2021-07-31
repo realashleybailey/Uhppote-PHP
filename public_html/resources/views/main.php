@@ -24,5 +24,3 @@
 use UhppotePHP\JWT\WebAuth;
 
 require_once(dirname(__FILE__) . "/../../resources/config.php");
-
-echo WebAuth::Create();

@@ -28,6 +28,8 @@ if (isset($_SESSION['LOGGED_IN']) && $_SESSION['LOGGED_IN'] == true) {
     header('Location: /admin');
 }
 
+print_r(getallheaders());
+
 ?>
 <style>
     html,

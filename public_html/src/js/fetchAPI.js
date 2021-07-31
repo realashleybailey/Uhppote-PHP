@@ -20,8 +20,7 @@ export async function fetchAPI(bodyParameters, userauth = false) {
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json',
-            USER_AUTHORIZATION,
-            'HTTP_AUTHORIZATION': 'Bearer ' + authToken,
+            'Authorization': 'Bearer ' + authToken,
             'Host': 'ashleybailey.me'
         },
         body,
