@@ -4,7 +4,7 @@ PASS_MYSQL_ROOT=`openssl rand -base64 12` # this you need to save. 12 is chars l
 PASS_PHPMYADMIN_APP=`openssl rand -base64 12` # can be random, won't be used again.  12 is chars length to password
 PASS_PHPMYADMIN_ROOT="${PASS_MYSQL_ROOT}" # Your MySQL root pass
 
-if [ "$(id -u)" != "0" ]; then
+if [ "$(whoami)" != "root" ]; then
     echo -e "\n${Yellow} This script must be run as root ${Color_Off}"
     echo -e "${Yellow} Try change to user root: sudo su -- or sudo su - userroot ${Color_Off}"
     echo -e "${Blue} sudo su -- or ${Color_Off}"
@@ -34,22 +34,11 @@ installApache() {
     # check Apache configuration: apachectl configtest
 }
 
-installLetsEncryptCertbot() {
-    # Let's Encrypt SSL
-    echo -e "\n${Cyan} * Installing Let's Encrypt SSL.. ${Color_Off}"
-    
-    sudo apt-get update # update repo sources
-    sudo apt-get install -y software-properties-common # required in order to add a repo
-    sudo add-apt-repository ppa:certbot/certbot -y # add Certbot repo
-    sudo apt-get update # update repo sources
-    sudo apt-get install -y python-certbot-apache # install Certbot
-}
-
 installPHP() {
     # PHP and Modules
     echo -e "\n${Cyan} * Installing PHP 8 and common Modules.. ${Color_Off}"
     
-    sudo add-apt-repository -y ppa:ondrej/php
+    sudo add-apt-repository --yes ppa:ondrej/php
     
     sudo apt-get -qy install ca-certificates apt-transport-https software-properties-common
     sudo apt-get -qy install php8.0 libapache2-mod-php8.0 php-curl php-dev php-gd php-gettext php-imagick php-intl php-mbstring php-mysql php-pear php-pspell php-recode php-xml php-zip
@@ -110,6 +99,30 @@ installUhppotePHP() {
     sudo git clone https://github.com/realashleybailey/Uhppote-PHP/ /var/www/
 }
 
+createVhost() {
+    printf "\033c"
+    read -p "What is your domain [uhhpote.example.com]: " domain
+    read -p "What is your email [uhhpote@example.com]: " email
+    printf "\033c"
+    
+    sudo touch /etc/apache2/sites-available/${domain}.conf
+
+    echo "<VirtualHost *:80>" > /etc/apache2/sites-available/${domain}.conf
+    echo "    ServerAdmin ${email}" >> /etc/apache2/sites-available/${domain}.conf
+    echo "    ServerName ${domain}" >> /etc/apache2/sites-available/${domain}.conf
+    echo " " >> /etc/apache2/sites-available/${domain}.conf
+    echo "    DocumentRoot /var/www/Uhppote-PHP/public_html/" >> /etc/apache2/sites-available/${domain}.conf
+    echo " " >> /etc/apache2/sites-available/${domain}.conf
+    echo "    <Directory /var/www/Uhppote-PHP/public_html/>" >> /etc/apache2/sites-available/${domain}.conf
+    echo "            Options Indexes FollowSymLinks" >> /etc/apache2/sites-available/${domain}.conf
+    echo "            AllowOverride All" >> /etc/apache2/sites-available/${domain}.conf
+    echo "            Require all granted" >> /etc/apache2/sites-available/${domain}.conf
+    echo "    </Directory>" >> /etc/apache2/sites-available/${domain}.conf
+    echo "</VirtualHost>" >> /etc/apache2/sites-available/${domain}.conf
+
+    sudo a2ensite ${domain}.conf
+}
+
 enableMods() {
     # Enable mod_rewrite, required for WordPress permalinks and .htaccess files
     echo -e "\n${Cyan} * Enabling Modules.. ${Color_Off}"
@@ -140,7 +153,6 @@ restartApache() {
 finally () {
     # update
     sudo apt update
-    sudo apt upgrade
     sudo apt-get autoremove
     sudo apt-get autoclean
 }
@@ -157,12 +169,42 @@ createPassFile() {
 update
 installGit
 installApache
-installLetsEncryptCertbot
 installPHP
-installMySQL
-secureMySQL
-installPHPMyAdmin
+
+printf "\033c"
+read -r -p "Would you like to install MySQL? [Y/n] - Default is [Y] " input
+
+case $input in
+    [yY][eE][sS]|[yY])
+        installMySQL
+        secureMySQL
+    ;;
+    [nN][oO]|[nN])
+        
+    ;;
+    *)
+        installMySQL
+        secureMySQL
+    ;;
+esac
+
+printf "\033c"
+read -r -p "Would you like to install PhpMyAdmin? [Y/n] - Default is [Y] " input
+
+case $input in
+    [yY][eE][sS]|[yY])
+        installPHPMyAdmin
+    ;;
+    [nN][oO]|[nN])
+        
+    ;;
+    *)
+        installPHPMyAdmin
+    ;;
+esac
+
 installUhppotePHP
+createVhost
 enableMods
 setPermissions
 restartApache
@@ -173,14 +215,16 @@ createPassFile
 
 
 echo -e "${Green}";
-echo -e "  ____ ___.__                          __           __________  ___ _____________  "
-echo -e " |    |   \  |__ ______ ______   _____/  |_  ____   \______   \/   |   \______   \ "
-echo -e " |    |   /  |  \\____ \\____ \ /  _ \   __\/ __ \   |     ___/    ~    \     ___/ "
-echo -e " |    |  /|   Y  \  |_> >  |_> >  <_> )  | \  ___/   |    |   \    Y    /    |     "
-echo -e " |______/ |___|  /   __/|   __/ \____/|__|  \___  >  |____|    \___|_  /|____|     "
-echo -e "               \/|__|   |__|                    \/                   \/            "
-echo -e "                                                                                   "
-echo -e "                                                                                   "
+echo -e "  _    _ _                       _         _____  _    _ _____  "
+echo -e " | |  | | |                     | |       |  __ \| |  | |  __ \ "
+echo -e " | |  | | |__  _ __  _ __   ___ | |_ ___  | |__) | |__| | |__) |"
+echo -e " | |  | | '_ \| '_ \| '_ \ / _ \| __/ _ \ |  ___/|  __  |  ___/ "
+echo -e " | |__| | | | | |_) | |_) | (_) | ||  __/ | |    | |  | | |     "
+echo -e "  \____/|_| |_| .__/| .__/ \___/ \__\___| |_|    |_|  |_|_|     "
+echo -e "              | |   | |                                         "
+echo -e "              |_|   |_|                                         "
+echo -e " "
+echo -e " "
 echo -e "Your have Successfully!"
 echo -e " "
 echo -e "UhppotePHP username is: uhppoteadmin"
@@ -188,5 +232,6 @@ echo -e "UhppotePHP password is: uhppotephp"
 echo -e " "
 echo -e "MySQL username is: root"
 echo -e "MySQL password is: ${PASS_MYSQL_ROOT}"
+echo -e " "
 echo -e "Saved to /var/www/Uhppote-PHP/Passwords_DELETE.txt"
 echo -e "${Color_Off}"
