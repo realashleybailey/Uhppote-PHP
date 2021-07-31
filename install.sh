@@ -41,13 +41,14 @@ installPHP() {
     sudo add-apt-repository --yes ppa:ondrej/php
     
     sudo apt-get -qy install ca-certificates apt-transport-https software-properties-common
-    sudo apt-get -qy install php8.0 libapache2-mod-php8.0 php-curl php-dev php-gd php-gettext php-imagick php-intl php-mbstring php-mysql php-pear php-pspell php-recode php-xml php-zip
+    sudo apt-get -qy install php8.0 php-curl php-dev php-gd php-gettext php-imagick php-intl php-mbstring php-mysql php-pear php-pspell php-recode php-xml php-zip
     sudo apt-get -qy install php8.0-fpm libapache2-mod-fcgid
     sudo apt-get -qy install php-mysql
     sudo apt-get -qy install php-curl
     sudo apt-get -qy install php-imagick
     sudo apt-get -qy install php-mbstring
     sudo apt-get -qy install php-xml
+    sudo apt-get -qy install libapache2-mod-php
     
     sudo a2enmod proxy_fcgi setenvif
     sudo a2enconf php8.0-fpm
@@ -96,7 +97,7 @@ installPHPMyAdmin() {
 
 installUhppotePHP() {
     echo -e "\n${Cyan} * Installing Uhppote PHP.. ${Color_Off}"
-    sudo git clone https://github.com/realashleybailey/Uhppote-PHP/ /var/www/
+    sudo git clone https://github.com/realashleybailey/Uhppote-PHP/ /var/www/Uhppote-PHP
 }
 
 createVhost() {
@@ -111,9 +112,9 @@ createVhost() {
     echo "    ServerAdmin ${email}" >> /etc/apache2/sites-available/${domain}.conf
     echo "    ServerName ${domain}" >> /etc/apache2/sites-available/${domain}.conf
     echo " " >> /etc/apache2/sites-available/${domain}.conf
-    echo "    DocumentRoot /var/www/Uhppote-PHP/public_html/" >> /etc/apache2/sites-available/${domain}.conf
+    echo "    DocumentRoot /var/www/Uhppote-PHP/public_html" >> /etc/apache2/sites-available/${domain}.conf
     echo " " >> /etc/apache2/sites-available/${domain}.conf
-    echo "    <Directory /var/www/Uhppote-PHP/public_html/>" >> /etc/apache2/sites-available/${domain}.conf
+    echo "    <Directory /var/www/Uhppote-PHP/public_html>" >> /etc/apache2/sites-available/${domain}.conf
     echo "            Options Indexes FollowSymLinks" >> /etc/apache2/sites-available/${domain}.conf
     echo "            AllowOverride All" >> /etc/apache2/sites-available/${domain}.conf
     echo "            Require all granted" >> /etc/apache2/sites-available/${domain}.conf
