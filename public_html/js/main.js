@@ -14828,13 +14828,14 @@ $('body').on('click', '#addController', function (item) {
     const saveBox = $('#saveBox');
     const saveModal = new mdb.Modal(saveBox);
 
-    const forms = document.querySelectorAll('.needs-validation');
+    const form = $('#saveController');
     const ipv4_address = $('#controlleripv4');
 
     var serial = $(item.target).data('serial');
     var ip = $(item.target).data('ip');
 
-    saveBox.find('controllerserial').value(serial);
+    saveBox.find('#controllerserial').val(serial);
+    saveBox.find('#controlleripv4').val(ip);
 
     ipv4_address.inputmask({
         alias: "ip",
@@ -14842,14 +14843,29 @@ $('body').on('click', '#addController', function (item) {
         showMaskOnHover: false
     });
 
-    Array.prototype.slice.call(forms).forEach((form) => {
-        form.addEventListener('submit', (event) => {
-            if (!form.checkValidity()) {
-                event.preventDefault();
-                event.stopPropagation();
+    $('#saveController').submit(async function (event) {
+        event.preventDefault();
+
+        if (!$('#saveController')[0].checkValidity()) {
+            $('#saveController').addClass('was-validated');
+            return;
+        }
+
+        var bodyParameters = {
+            route: {
+                path: 'Uhppote',
+                module: 'Search'
             }
-            form.classList.add('was-validated');
-        }, false);
+        }
+
+        try {
+            await (0,_fetchAPI_js__WEBPACK_IMPORTED_MODULE_0__.fetchAPI)(bodyParameters);
+        } catch ($e) {
+            $('#errorBox .bodytext').html($e);
+            _errorBox__WEBPACK_IMPORTED_MODULE_1__.errorModal.show();
+            return;
+        }
+
     });
 
     saveModal.show();
