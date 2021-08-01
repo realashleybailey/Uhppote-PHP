@@ -58,6 +58,7 @@ $('body').on('click', '#addController', function (item) {
 
     saveBox.find('#controllerserial').val(serial);
     saveBox.find('#controlleripv4').val(ip);
+    // saveBox.find('#controlleripv4').val(ip);
 
     ipv4_address.inputmask({
         alias: "ip",
