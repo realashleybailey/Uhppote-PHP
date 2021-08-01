@@ -74,11 +74,11 @@ switch ($request) {
         template('footer_inc.php');
         template('footer.php');
         break;
-    case '/admin/settings':
-    case '/admin/settings/':
+    case '/admin/search':
+    case '/admin/search/':
         template('header_inc.php');
         template('header.php');
-        view('settings');
+        view('search');
         template('footer_inc.php');
         template('footer.php');
         break;
