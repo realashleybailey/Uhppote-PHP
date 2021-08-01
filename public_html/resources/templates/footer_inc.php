@@ -27,5 +27,11 @@
 </main>
 <!-- <script src="/js/jquery-3.6.0.min.js"></script>
 <script src="/js/mdb.min.js"></script> -->
-<script type="text/javascript" src="https://localhost:9000/main.js"></script>
+<?php
+if ($_SERVER['HTTP_HOST'] == 'uhppote.vhx.cloud') {
+?>
+    <script type="text/javascript" src="https://localhost:9000/main.js"></script>
+<?php
+}
+?>
 <script src="/js/main.js"></script>
